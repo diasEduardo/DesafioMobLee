@@ -19,6 +19,6 @@ public class topicos extends AppCompatActivity {
         ArrayList<String> arrayList= new ArrayList<String>(Arrays.asList(itens));
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item,R.id.listItem,arrayList);
         topicos.setAdapter(adapter);
-
+        topicos
     }
 }
