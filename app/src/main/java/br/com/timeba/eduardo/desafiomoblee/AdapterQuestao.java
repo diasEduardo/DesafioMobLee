@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+
+import java.net.URLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +61,14 @@ public class AdapterQuestao extends BaseAdapter {
 
         ((TextView)convertView.findViewById(R.id.titulo)).setText(atual.title);
         ( (TextView)convertView.findViewById(R.id.nome)).setText(atual.owner.display_name);
-        ((TextView)convertView.findViewById(R.id.votos)).setText(atual.score);
+        ((TextView)convertView.findViewById(R.id.votos)).setText("Pontuação: "+atual.score);
+
+
+
+        //((ImageView) convertView.findViewById(R.id.foto)).setImageBitmap(foto);
 
         return convertView;
     }
+
+
 }
