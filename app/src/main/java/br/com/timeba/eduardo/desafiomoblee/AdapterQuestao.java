@@ -14,20 +14,21 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by EDUARDO on 13/03/2016.
  */
 public class AdapterQuestao extends BaseAdapter {
 
-    private ArrayList<Questao> questoes = new ArrayList<>();
+    private List<Questao> questoes = new ArrayList<>();
     private final LayoutInflater inflater;
 
     public AdapterQuestao(Context context) {
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    public void setItensList(ArrayList<Questao> questoes) {
+    public void setItensList(List<Questao> questoes) {
         this.questoes = questoes;
         notifyDataSetChanged();
     }
@@ -55,8 +56,8 @@ public class AdapterQuestao extends BaseAdapter {
         Questao atual = questoes.get(position);
 
         ((TextView)convertView.findViewById(R.id.titulo)).setText(atual.title);
-        ( (TextView)convertView.findViewById(R.id.nome)).setText(atual.display_name);
-        ((TextView)convertView.findViewById(R.id.votos)).setText(atual.reputation);
+        ( (TextView)convertView.findViewById(R.id.nome)).setText(atual.owner.display_name);
+        ((TextView)convertView.findViewById(R.id.votos)).setText(atual.score);
 
         return convertView;
     }

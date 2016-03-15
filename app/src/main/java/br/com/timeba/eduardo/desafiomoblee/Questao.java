@@ -1,16 +1,18 @@
 package br.com.timeba.eduardo.desafiomoblee;
 
+import java.util.List;
+
 /**
  * Created by EDUARDO on 13/03/2016.
  */
 public class Questao {
-    final String title,display_name,profile_image,reputation;
+    final String title,score;
+  final Criador owner;
 
-    Questao(String titulo,String nome,String imagem,String votos){
+    Questao(String titulo,Criador criador,String votos){
         this.title=titulo;
-        this.display_name=nome;
-        this.profile_image=imagem;
-        this.reputation=votos;
+       owner=criador;
+        this.score=votos;
     };
 
 
