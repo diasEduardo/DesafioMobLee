@@ -25,7 +25,7 @@ public class Questoes extends AppCompatActivity {
         String topico=getIntent().getStringExtra("nome");
         Ion.with(this)
                 .load("http://api.stackexchange.com/2.2/search/" +
-                        "advanced?order=asc&sort=creation&tagged="+topico+"&site=stackoverflow&pagesize=20")
+                        "advanced?order=desc&sort=creation&tagged="+topico+"&site=stackoverflow&pagesize=20")
                 .as(new TypeToken<ResultadoAPI>() {})
                 .setCallback(new FutureCallback<ResultadoAPI>() {
                     @Override
